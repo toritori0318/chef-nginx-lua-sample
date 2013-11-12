@@ -1,0 +1,16 @@
+lua_package_cpath "<%= @lua_lib_directory %>/lua/5.1/?.so";
+
+server {
+  listen   80;
+
+  access_log  /var/log/nginx/access.log;
+
+  location /current_time {
+    content_by_lua_file <%= @nginx_lua_script_directory %>/current_time.lua;
+  }
+
+  location / {
+    default_type 'text/plain';
+    content_by_lua "ngx.say('Hello,lua!')";
+  }
+}

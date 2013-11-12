@@ -1,0 +1,13 @@
+{
+    "nginx":{
+      "version": "1.4.3",
+      "install_method": "source",
+      "luajit": {
+        "include": "/usr/local/include",
+        "lib": "/usr/local/lib"
+      }
+    },
+    "recipes":[
+      "recipe[nginx]"
+    ]
+}
